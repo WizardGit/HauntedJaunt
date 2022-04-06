@@ -222,6 +222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6062151492953643182}
+  - component: {fileID: 6962996345342074954}
   m_Layer: 0
   m_Name: LeftFoot
   m_TagString: Untagged
@@ -244,6 +245,19 @@ Transform:
   m_Father: {fileID: 6062151492953643194}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6962996345342074954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6062151492953736334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a976e20d1781e364dab4c5130e6151a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 20
 --- !u!1 &6062151492953736336
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,6 +580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6062151492953643198}
   - component: {fileID: 6062151492961171286}
+  - component: {fileID: 3469447626006236348}
   - component: {fileID: 8079314575776062301}
   - component: {fileID: 1753335634058226910}
   m_Layer: 0
@@ -610,6 +625,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3469447626006236348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6062151492953736350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a976e20d1781e364dab4c5130e6151a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 20
 --- !u!54 &8079314575776062301
 Rigidbody:
   m_ObjectHideFlags: 0
