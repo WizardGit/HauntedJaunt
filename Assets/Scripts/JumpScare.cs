@@ -14,15 +14,13 @@ public class JumpScare : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            m_IsPlayerAtScare = true;
+            can.alpha = 1;
+            video.Play();            
         }
     }
     void Update()
     {
-        if (m_IsPlayerAtScare)
-        {
-            can.alpha = 1;
-            video.Play();
-        }
+        if (video.isPlaying == false)
+            can.alpha = 0;
     }
 }
