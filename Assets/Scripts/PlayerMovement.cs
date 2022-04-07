@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody m_Rigidbody;
     Vector3 m_Movement;
     Quaternion m_Rotation = Quaternion.identity;
+    public float gravityScale = 5;
 
     // Start is called before the first frame update
     void Start()
