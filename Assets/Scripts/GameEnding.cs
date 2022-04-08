@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameEnding : MonoBehaviour
 {
@@ -10,13 +11,16 @@ public class GameEnding : MonoBehaviour
     public GameObject player;
     bool m_IsPlayerAtExit;
     bool m_IsPlayerCaught;
+    
 
     float m_Timer;
     bool m_HasAudioPlayed;
+    public TextMeshProUGUI displayPos;
     public CanvasGroup exitBackgroundImageCanvasGroup;
     public AudioSource exitAudio;
     public CanvasGroup caughtBackgroundImageCanvasGroup;
-    public AudioSource caughtAudio;    
+    public AudioSource caughtAudio;
+    public AudioSource alarm;
 
     void OnTriggerEnter(Collider other)
     {
@@ -35,10 +39,14 @@ public class GameEnding : MonoBehaviour
     {
         if (m_IsPlayerAtExit)
         {
+            displayPos.text = " ";
+            alarm.Stop();
             EndLevel(exitBackgroundImageCanvasGroup, false, exitAudio);
         }
         else if (m_IsPlayerCaught)
         {
+            displayPos.text = " ";
+            alarm.Stop();
             EndLevel(caughtBackgroundImageCanvasGroup, true, caughtAudio);
         }
     }
