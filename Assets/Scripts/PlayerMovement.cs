@@ -36,12 +36,14 @@ public class PlayerMovement : MonoBehaviour
 
     void setPosText()
     {
+        // Let's get the position of each ghost in relation to the player
         Vector3 playerPos = m_Rigidbody.position;
         Vector3 pos0 = playerPos - ghost0.position;
         Vector3 pos1 = playerPos - ghost1.position;
         Vector3 pos2 = playerPos - ghost2.position;
         Vector3 pos3 = playerPos - ghost3.position;
 
+        // Get the distance of x + y (but only the absolute values
         float a = Math.Abs(pos0.x) + Math.Abs(pos0.z);        
         float b = Math.Abs(pos1.x) + Math.Abs(pos1.z);
         float c = Math.Abs(pos2.x) + Math.Abs(pos2.z);
@@ -50,10 +52,12 @@ public class PlayerMovement : MonoBehaviour
         z = Math.Min(z,c);
         z = Math.Min(z,d);
 
+        // These colors will be used for our text, so let's use red for "danger," "white" for safe, and the 50% lerp of both for "warning
         Color red = new Color(1.0f, 0.0f, 0.0f, 1.0f);
         Color white = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         Color pink = Color.Lerp(red, white, 0.5f);
 
+        // If we are in danger or warning, let's change the text color and start the alarm
         if ((z < 3) && (!alarm.isPlaying))
         {            
             alarm.Play();
@@ -71,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
             }            
             displayPos.color = white;
         }
+        // Keep regularly updating the stats!
         displayPos.text = "Closest ghost: " + Math.Round(z,2).ToString() + "\nAngle between you and Ending: \n" + Math.Round(Vector3.Dot(playerPos.normalized, ending.normalized),2).ToString();
     }
 

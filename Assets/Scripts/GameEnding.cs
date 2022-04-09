@@ -10,8 +10,7 @@ public class GameEnding : MonoBehaviour
     public float fadeDuration = 1f;
     public GameObject player;
     bool m_IsPlayerAtExit;
-    bool m_IsPlayerCaught;
-    
+    bool m_IsPlayerCaught;    
 
     float m_Timer;
     bool m_HasAudioPlayed;
@@ -39,12 +38,14 @@ public class GameEnding : MonoBehaviour
     {
         if (m_IsPlayerAtExit)
         {
+            // If we reach the end, we need to end the game but also stop the alarm and get rid of the displayed text
             displayPos.text = " ";
             alarm.Stop();
             EndLevel(exitBackgroundImageCanvasGroup, false, exitAudio);
         }
         else if (m_IsPlayerCaught)
         {
+            // If we get caught, we need to restart the level but also stop the alarm and get rid of the displayed text during the image display
             displayPos.text = " ";
             alarm.Stop();
             EndLevel(caughtBackgroundImageCanvasGroup, true, caughtAudio);
